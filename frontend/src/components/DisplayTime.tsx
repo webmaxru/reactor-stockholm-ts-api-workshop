@@ -93,12 +93,12 @@ export interface Deviation2 {
 }
 
 export interface stationID {
-  //   stationID: number | undefined;
   stationID: string;
 }
 
 const BASE_API_URL = "http://localhost:3000/times/";
 const TransitTimes = ({ stationID }: stationID) => {
+  // const TransitTimes: React.FC<Props> = ({ stationID }) => {};
   const [data, setData] = useState<DisplayTime | null>(null);
 
   function getTimes(): Promise<DisplayTime> {

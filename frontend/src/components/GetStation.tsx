@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 
-// interface StationProps {
-//   stationID: number;
-// }
-// export type stationID = {
-//   stationID: number;
-// };
-
 type StationProps = {
-  onSubmit: (stationID: string) => void;
+  onSubmit: (stationID: string) => void; //function returns nothing
 };
 
 const GetStation = ({ onSubmit }: StationProps) => {

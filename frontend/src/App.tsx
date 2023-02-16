@@ -20,5 +20,3 @@ function App() {
 }
 
 export default App;
-
-//https://www.learnbestcoding.com/post/121/react-js-json-response-to-typescript-object

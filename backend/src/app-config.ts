@@ -1,4 +1,5 @@
 import { ZodError, z } from "zod";
+require('dotenv').config()
 const configSchema = z.object({
   PORT: z
     .string()

@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
-import "./App.css";
 import DisplayTime from "./components/DisplayTime";
 import GetStation from "./components/GetStation";
 

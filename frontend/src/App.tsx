@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import DisplayTime from "./components/DisplayTime";
 import GetStation from "./components/GetStation";
 

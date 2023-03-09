@@ -1,5 +1,5 @@
 import { AzureFunction, Context, HttpRequest } from '@azure/functions';
-import { ZodError, z } from 'zod';
+import { ZodError } from 'zod';
 import { loadConfig } from './app-config';
 const config = loadConfig()!;
 
@@ -52,21 +52,15 @@ const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
-  const stationId = req.query.stationId;
+  const stationId = req.params.stationId;
 
   try {
-    const schema = z.object({
-      stationId: z.string().transform((val) => Number(val)),
-    });
-    const { stationId } = schema.parse(req.params);
-
     const apiCall = await fetch(
       `${config.apiUrl}?key=${config.apiKey}&siteid=${stationId}&timewindow=60`
     );
     const data: StationInfo = await apiCall.json();
 
     context.res = {
-      // status: 200, /* Defaults to 200 */
       body: {
         stationId,
         results: data.ResponseData,

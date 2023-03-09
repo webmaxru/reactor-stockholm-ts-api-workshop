@@ -52,7 +52,7 @@ const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
-  const stationId = req.params.stationId;
+  const stationId = context.bindingData.stationId;
 
   try {
     const apiCall = await fetch(
